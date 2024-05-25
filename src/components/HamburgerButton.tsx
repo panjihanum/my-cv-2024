@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LottieAnimation from "./LottieAnimation";
 import { ICONS } from "../assets";
 import { useTheme } from "../context/ThemeContext";
