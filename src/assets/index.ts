@@ -14,6 +14,8 @@ import ANIM_JAVASCRIPT from "./icons8-javascript.json";
 import ANIM_PHP from "./icons8-php.json";
 import ANIM_PYTHON from "./icons8-python.json";
 import ANIM_DARK_LIGHT_BTN from "./dark-light-button.json";
+import ANIM_DARK_HAMB_BTN from "./hamburger-dark.json";
+import ANIM_LIGHT_HAMB_BTN from "./hamburger-light.json";
 
 export const IMAGES = {
   PANJI_TRANS,
@@ -35,5 +37,7 @@ export const ICONS = {
     ANIM_PHP,
     ANIM_PYTHON,
     ANIM_DARK_LIGHT_BTN,
+    ANIM_DARK_HAMB_BTN,
+    ANIM_LIGHT_HAMB_BTN,
   },
 };

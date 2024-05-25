@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LottieAnimation from "./LottieAnimation";
 import { ICONS } from "../assets";
 import { useTheme } from "../context/ThemeContext";
@@ -8,16 +8,29 @@ export const DarkLightButton = () => {
   const [isDark, setIsDark] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
 
+  const handleChangeTheme = (initial?: boolean) => {
+    setIsPaused(false);
+    !initial && toggleTheme();
+    setTimeout(() => {
+      setIsPaused(true);
+      setIsDark(!isDark);
+    }, 1500);
+  };
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("useDarkTheme") &&
+      localStorage.getItem("useDarkTheme") == "0"
+    ) {
+      handleChangeTheme(true);
+    }
+  }, []);
+
   return (
     <button
       onClick={() => {
         if (!isPaused) return;
-        setIsPaused(false);
-        toggleTheme();
-        setTimeout(() => {
-          setIsPaused(true);
-          setIsDark(!isDark);
-        }, 1500);
+        handleChangeTheme();
       }}
     >
       <LottieAnimation

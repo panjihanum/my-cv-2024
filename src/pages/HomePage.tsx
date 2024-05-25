@@ -1,6 +1,7 @@
 import { ICONS } from "../assets";
 import LottieAnimation from "../components/LottieAnimation";
 import { LottieButton } from "../components/LottieButton";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 const myContacts = [
   {
@@ -18,7 +19,7 @@ const myContacts = [
   {
     icon: ICONS.ANIMATION.ANIM_EMAIL,
     url: "mailto:pan.hanum@gmail.com?subject=Offering%20Opportunity",
-    speed: 3,
+    speed: 4,
   },
 ];
 export const HomePage = () => {
@@ -26,7 +27,10 @@ export const HomePage = () => {
     <div className="flex flex-col min-h-screen" id="homePage">
       <div className="h-[72px]" />
       <div className="flex flex-col lg:flex-row grow justify-between lg:p-24 items-center relative">
-        <div className="flex flex-col w-full lg:w-auto items-center lg:items-start text-center lg:text-left">
+        <ScrollAnimation
+          animationClass="animate__animated animate__backInLeft"
+          className="flex flex-col w-full lg:w-auto items-center lg:items-start text-center lg:text-left"
+        >
           <span className="text-sm dark:text-white">Hi!, I'm 👋</span>
           <span className="font-bold text-4xl dark:text-white">
             Panji <span className="text-primary dark:text-primary">Hanum</span>
@@ -49,15 +53,22 @@ export const HomePage = () => {
               );
             })}
           </div>
-        </div>
-        <div className="w-[75vw] h-[40vh] lg:w-auto lg:h-auto">
+        </ScrollAnimation>
+        <ScrollAnimation
+          animationClass="animate__animated animate__zoomIn"
+          className="w-[75vw] h-[40vh] lg:w-auto lg:h-auto"
+        >
           <LottieAnimation
             animationData={ICONS.ANIMATION.ANIM_PERSON_DATA_SEARCH}
             width={"100%"}
             height={"100%"}
+            play
           />
-        </div>
-        <div className="flex flex-col lg:max-w-[25%] text-center lg:text-start mb-24 px-4">
+        </ScrollAnimation>
+        <ScrollAnimation
+          animationClass="animate__animated animate__backInRight"
+          className="flex flex-col lg:max-w-[25%] text-center lg:text-start mb-24 px-4"
+        >
           <span className="font-semibold dark:text-white">
             Are u looking for software engineer ?
           </span>
@@ -77,7 +88,7 @@ export const HomePage = () => {
               </span>
             </button>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   );

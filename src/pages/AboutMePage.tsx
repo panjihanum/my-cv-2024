@@ -1,5 +1,6 @@
 import { ICONS, IMAGES } from "../assets";
 import LottieAnimation from "../components/LottieAnimation";
+import ScrollAnimation from "../components/ScrollAnimation";
 
 export const AboutMePage = () => {
   const masteredProgramming = [
@@ -11,11 +12,19 @@ export const AboutMePage = () => {
   return (
     <div className="w-full bg-[#ededed] dark:bg-[#373737]" id="aboutMePage">
       <div className="flex lg:flex-row justify-between">
-        <div className="hidden w-full h-auto lg:flex flex-col justify-end items-center">
+        <ScrollAnimation
+          animationClass="animate__animated animate__slideInLeft"
+          className="hidden w-full h-auto lg:flex flex-col justify-end items-center"
+        >
           <img src={IMAGES.PANJI_TRANS} className="w-[720px]" />
-        </div>
-        <div className="lg:max-w-[50%]  p-12 lg:p-24">
-          <span className="font-bold underline text-2xl dark:text-white">About Me</span>
+        </ScrollAnimation>
+        <ScrollAnimation
+          animationClass="animate__animated animate__slideInRight"
+          className="lg:max-w-[50%]  p-12 lg:p-24"
+        >
+          <span className="font-bold underline text-2xl dark:text-white">
+            About Me
+          </span>
           <br />
           <br />
           <div>
@@ -42,7 +51,9 @@ export const AboutMePage = () => {
             </span>
             <br />
             <br />
-            <span className="font-bold dark:text-white">I Love All About Technology!! 💓</span>
+            <span className="font-bold dark:text-white">
+              I Love All About Technology!! 💓
+            </span>
             <br />
             <br />
             <span className="underline text-sm dark:text-white">
@@ -65,7 +76,7 @@ export const AboutMePage = () => {
               })}
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   );
