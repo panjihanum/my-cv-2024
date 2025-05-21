@@ -25,14 +25,14 @@ export const Header: React.FC<HeaderInterface> = () => {
       label: "Portfolio",
       id: "portfolioPage",
     },
-    {
-      label: "Certificate",
-      id: "certificatePage",
-    },
-    {
-      label: "Contact",
-      id: "contactPage",
-    },
+    // {
+    //   label: "Certificate",
+    //   id: "certificatePage",
+    // },
+    // {
+    //   label: "Contact",
+    //   id: "contactPage",
+    // },
   ];
 
   return (

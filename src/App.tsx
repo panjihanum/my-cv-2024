@@ -1,7 +1,6 @@
 import { Header } from "./components/Header";
 import { useTheme } from "./context/ThemeContext";
 import { AboutMePage } from "./pages/AboutMePage";
-import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
 import { PortfolioPage } from "./pages/PortfolioPage";
 
@@ -14,7 +13,8 @@ function App() {
         <HomePage />
         <AboutMePage />
         <PortfolioPage />
-        <ContactPage />
+        {/* <PortfolioPage />
+        <ContactPage /> */}
       </div>
     </div>
   );
