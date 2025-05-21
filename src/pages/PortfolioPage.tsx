@@ -3,25 +3,80 @@ import ScrollAnimation from "../components/ScrollAnimation";
 export const PortfolioPage = () => {
   const projects = [
     {
-      title: "TAAT Platform",
+      title: "TAAT - Web Platform",
       description:
-        "Built from scratch using NestJS & Next.js with microservice architecture. Includes WhatsApp integration, SEO, Redis, Docker, and server config.",
+        "Developed NestJS & Next.js app with WhatsApp integration, SEO, and Kommo/Brevo for automation.",
       image: "taat-thumbnail.png",
       link: "https://taat.co.id",
     },
     {
-      title: "MSIG Life Nebula",
+      title: "MSIG Life - Nebula Underwriting",
       description:
-        "Developed backend with Java Spring Boot, frontend with Nuxt.js, and CI/CD with Jenkins. Optimized Oracle DB queries.",
+        "Managed Java Spring + Vue.js project, REST API, Oracle DB using Toad.",
       image: "msig-thumbnail.png",
       link: "https://msiglife.co.id",
     },
     {
-      title: "GajiCermat App",
+      title: "IDN Financial Trending Saham",
       description:
-        "Built financial tools using React & React Native. Integrated REST APIs and worked closely with UI/UX teams.",
+        "Python app scraping trending stocks & sending Telegram reports.",
+      image: "idn-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "Yoshinoya Configurator",
+      description:
+        "Laravel + Next.js app for product config, Docker deploy on CentOS.",
+      image: "yoshinoya-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "Techtalent - AKASIA.ID",
+      description:
+        "Built CV builder using Laravel, React, and MySQL on CentOS.",
+      image: "akasia-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "ALAMI Sharia P2P App",
+      description:
+        "Mobile app with React Native + Redux, integrated with Hibernate.",
+      image: "alami-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "GajiCermat Financing Web & App",
+      description: "Improved UX & code with React.js, React Native, and Redux.",
       image: "gajicermat-thumbnail.png",
       link: "https://www.gajicermat.com/",
+    },
+    {
+      title: "Instamoney Integration",
+      description:
+        "Automated disbursement using Java, Hibernate, Kafka, PostgreSQL.",
+      image: "instamoney-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "Weendr",
+      description:
+        "Built smoke test app using Next.js, Bootstrap, MySQL on CentOS.",
+      image: "weendr-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "Marrakesh",
+      description:
+        "Refined beneficiary flow using Java, Spring Boot, Hibernate.",
+      image: "marrakesh-thumbnail.png",
+      link: "#",
+    },
+    {
+      title: "AKASIA.ID",
+      description:
+        "React + Express app with MySQL backend, deployed on CentOS.",
+      image: "akasiaid-thumbnail.png",
+      link: "#",
     },
   ];
 
@@ -31,7 +86,7 @@ export const PortfolioPage = () => {
       id="portfolioPage"
     >
       <ScrollAnimation
-        animationClass="animate__animated animate__fadeInUp"
+        animationClass="animate__animated animate__zoomIn"
         className="p-12 lg:p-24 text-center"
       >
         <span className="font-bold underline text-2xl dark:text-white">
