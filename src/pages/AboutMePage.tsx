@@ -45,9 +45,6 @@ export const AboutMePage = () => {
               with Java because I dont have experience in Java, and in the 6
               months, I got the "Rising Star" that exceeded management
               expectations. <br />
-              And now, I want to learn AI Engineer because, I see the prospect
-              in AI Engineer is too good, so I learn to be AI engineer and
-              follow the bootcamp in QarirGenerator in 2024 (Still Learn).
             </span>
             <br />
             <br />
