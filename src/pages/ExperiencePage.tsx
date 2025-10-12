@@ -14,7 +14,7 @@ export const ExperiencePage = () => {
     {
       company: "TAAT (Tech Automation & Analytics Tool)",
       role: "Fullstack Engineer (Freelance)",
-      duration: "2024 — Present",
+      duration: "Sep 2024 — Present",
       description:
         "Developed and maintained TAAT web platform using NestJS microservices and Next.js. Integrated WhatsApp automation, Kommo/Brevo CRM, and SEO pipeline. Implemented Dockerized deployment on Ubuntu Server.",
       tech: [
@@ -24,33 +24,9 @@ export const ExperiencePage = () => {
       ],
     },
     {
-      company: "MSIG Life Indonesia",
-      role: "Java Developer (Full-time)",
-      duration: "2022 — Present",
-      description:
-        "Built and optimized insurance underwriting system (Nebula) using Java Spring Boot, Quarkus, and Vue/Nuxt.js. Integrated RESTful APIs, Oracle DB, and CI/CD via Jenkins. Improved performance and maintainability.",
-      tech: [
-        <SiSpringboot key="spring" />,
-        <FaServer key="server" />,
-        <FaCogs key="ci" />,
-      ],
-    },
-    {
-      company: "Yoshinoya Indonesia",
-      role: "Software Engineer (Freelance)",
-      duration: "2023 — Present",
-      description:
-        "Built Next.js + Laravel-based configurator app for internal product management. Containerized backend services with Docker, integrated REST API, and automated CentOS deployment.",
-      tech: [
-        <SiLaravel key="laravel" />,
-        <SiReact key="next" />,
-        <SiDocker key="docker2" />,
-      ],
-    },
-    {
       company: "Akal Karya Indonesia",
       role: "Fullstack Developer (Freelance)",
-      duration: "2022 — 2024",
+      duration: "Dec 2022 — Aug 2025",
       description:
         "Contributed to multiple client projects using NestJS, Next.js, and Laravel. Implemented scalable APIs, SEO-optimized landing pages, and automation pipelines for property sites.",
       tech: [
@@ -60,9 +36,22 @@ export const ExperiencePage = () => {
       ],
     },
     {
+      company: "MSIG Life Indonesia",
+      role: "Java Developer (Full-time)",
+      duration: "May 2024 — May 2025",
+      description:
+        "Built and optimized insurance underwriting system (Nebula) using Java Spring Boot, Quarkus, and Vue/Nuxt.js. Integrated RESTful APIs, Oracle DB, and CI/CD via Jenkins. Improved performance and maintainability.",
+      tech: [
+        <SiSpringboot key="spring" />,
+        <FaServer key="server" />,
+        <FaCogs key="ci" />,
+      ],
+    },
+
+    {
       company: "ALAMI Sharia",
-      role: "Mobile Developer (Contract)",
-      duration: "2021 — 2022",
+      role: "Fullstack Developer)",
+      duration: "Jun 2019 — Sep 2023",
       description:
         "Developed P2P financing app using React Native and Redux. Integrated backend services built on Hibernate and Spring Boot for scalable financial operations.",
       tech: [
