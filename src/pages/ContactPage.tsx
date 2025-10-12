@@ -48,7 +48,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
     {
       name: "LinkedIn",
       icon: <FaLinkedin />,
-      url: "https://linkedin.com/in/panjihanum",
+      url: "https://www.linkedin.com/in/panji-hanum",
       color: "hover:text-sky-600",
     },
     {
@@ -66,13 +66,13 @@ Message: ${encodeURIComponent(form.message)}%0A`;
     {
       name: "WhatsApp",
       icon: <FaWhatsapp />,
-      url: "https://wa.me/6281288050635",
+      url: "https://wa.me/6282113589617",
       color: "hover:text-green-500",
     },
     {
       name: "Email",
       icon: <FaEnvelope />,
-      url: "mailto:panji.hanum@gmail.com",
+      url: "mailto:panhanum.dev@gmail.com",
       color: "hover:text-primary",
     },
   ];
