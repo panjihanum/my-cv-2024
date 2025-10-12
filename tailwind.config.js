@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "selector",
@@ -9,7 +10,19 @@ export default {
         dark: "#222831",
         darkSecondary: "#31363F",
       },
+      keyframes: {
+        "spin-smooth": {
+          to: { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "spin-smooth": "spin-smooth 1.5s linear infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwindcss-animate"),
+  ],
 };

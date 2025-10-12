@@ -1,46 +1,47 @@
-import { useEffect, useState } from "react";
-import LottieAnimation from "./LottieAnimation";
-import { ICONS } from "../assets";
+import { motion } from "framer-motion";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
+import { useState, useEffect } from "react";
 
 export const DarkLightButton = () => {
-  const { toggleTheme } = useTheme();
-  const [isDark, setIsDark] = useState(false);
-  const [isPaused, setIsPaused] = useState(true);
-
-  const handleChangeTheme = (initial?: boolean) => {
-    setIsPaused(false);
-    !initial && toggleTheme();
-    setTimeout(() => {
-      setIsPaused(true);
-      setIsDark(!isDark);
-    }, 1500);
-  };
+  const { useDarkTheme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (
-      localStorage.getItem("useDarkTheme") &&
-      localStorage.getItem("useDarkTheme") == "0"
-    ) {
-      handleChangeTheme(true);
-    }
+    // Untuk menghindari flicker di SSR atau hydration
+    setMounted(true);
   }, []);
 
+  if (!mounted) return null;
+
   return (
-    <button
-      onClick={() => {
-        if (!isPaused) return;
-        handleChangeTheme();
-      }}
+    <motion.button
+      onClick={() => toggleTheme()}
+      className="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 dark:bg-white/10 text-primary dark:text-yellow-300 backdrop-blur-md hover:scale-110 transition-all"
+      whileTap={{ scale: 0.9, rotate: 15 }}
+      whileHover={{ rotate: -10 }}
     >
-      <LottieAnimation
-        animationData={ICONS.ANIMATION.ANIM_DARK_LIGHT_BTN}
-        width={"100%"}
-        height={"56px"}
-        speed={2}
-        autoplay={true}
-        isPaused={isPaused}
-      />
-    </button>
+      {useDarkTheme ? (
+        <motion.div
+          key="moon"
+          initial={{ opacity: 0, rotate: 180 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          exit={{ opacity: 0, rotate: -180 }}
+          transition={{ duration: 0.4 }}
+        >
+          <FaMoon size={18} />
+        </motion.div>
+      ) : (
+        <motion.div
+          key="sun"
+          initial={{ opacity: 0, rotate: -180 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          exit={{ opacity: 0, rotate: 180 }}
+          transition={{ duration: 0.4 }}
+        >
+          <FaSun size={18} />
+        </motion.div>
+      )}
+    </motion.button>
   );
 };

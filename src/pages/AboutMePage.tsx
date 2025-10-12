@@ -1,80 +1,115 @@
+import { motion } from "framer-motion";
 import { ICONS, IMAGES } from "../assets";
 import LottieAnimation from "../components/LottieAnimation";
-import ScrollAnimation from "../components/ScrollAnimation";
 
-export const AboutMePage = () => {
+const AboutMePage = () => {
   const masteredProgramming = [
     ICONS.ANIMATION.ANIM_JAVA,
     ICONS.ANIMATION.ANIM_JAVASCRIPT,
     ICONS.ANIMATION.ANIM_PHP,
     ICONS.ANIMATION.ANIM_PYTHON,
   ];
+
   return (
-    <div className="w-full bg-[#ededed] dark:bg-[#373737]" id="aboutMePage">
-      <div className="flex lg:flex-row justify-between">
-        <ScrollAnimation
-          animationClass="animate__animated animate__slideInLeft"
-          className="hidden w-full h-auto lg:flex flex-col justify-end items-center"
+    <section
+      id="aboutMePage"
+      className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-between overflow-hidden bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary"
+    >
+      {/* Glow Effects */}
+      <div className="absolute w-96 h-96 bg-primary/10 blur-3xl rounded-full top-10 left-10 animate-pulse -z-10"></div>
+      <div className="absolute w-[400px] h-[400px] bg-blue-400/10 blur-3xl rounded-full bottom-10 right-10 animate-ping -z-10"></div>
+
+      {/* Left: Image / Illustration */}
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex justify-center lg:justify-end items-center w-full lg:w-1/2 p-8"
+      >
+        <motion.img
+          src={IMAGES.PANJI_TRANS}
+          alt="Panji Hanum"
+          className="w-[70%] max-w-[520px] rounded-2xl shadow-2xl dark:shadow-primary/20 hover:scale-105 transition-transform duration-700"
+          whileHover={{ scale: 1.05, rotate: 1 }}
+        />
+      </motion.div>
+
+      {/* Right: Text Content */}
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col justify-center lg:w-1/2 p-10 lg:p-24 text-gray-800 dark:text-gray-100"
+      >
+        <motion.h2
+          className="text-3xl font-bold mb-4 text-primary relative w-fit"
+          whileHover={{ x: 10 }}
         >
-          <img src={IMAGES.PANJI_TRANS} className="w-[720px]" />
-        </ScrollAnimation>
-        <ScrollAnimation
-          animationClass="animate__animated animate__slideInRight"
-          className="lg:max-w-[50%]  p-12 lg:p-24"
-        >
-          <span className="font-bold underline text-2xl dark:text-white">
-            About Me
-          </span>
+          About Me
+          <span className="absolute bottom-0 left-0 w-[60%] h-[3px] bg-primary rounded-full"></span>
+        </motion.h2>
+
+        <p className="text-sm leading-7 opacity-90">
+          Hello! My name is <strong>Panji Hanum</strong>, but you can call me{" "}
+          <span className="font-semibold text-primary">Panji</span>. <br />I
+          started programming in <strong>2019</strong> at BLK Bekasi where I
+          learned Desktop Programming with <strong>C#</strong>. Later, I joined
+          the bootcamp at <strong>Arkademy (now PijarCamp)</strong>, learning{" "}
+          <strong>React Native</strong> & <strong>AdonisJS</strong> — and that’s
+          when I realized how much I love creating tech that solves problems.
           <br />
           <br />
-          <div>
-            <span className="text-sm dark:text-white">
-              Hello, My name is Panji Hanum, u can call me Panji
-              <br />I love programming since 2019 that for the first time I
-              learn programming in BLK Bekasi and I learn Desktop Programming
-              with C#. <br />
-              For the next, I learn again about web programming in the test
-              Bootcamp of Arkademy (now is PijarCamp) and I dont know I pass
-              when I coding web for the first time. and when I bootcamp, I learn
-              mobile programming with React Native and Adonis JS as a Backend.
-              and it's really amazing. <br />
-              And then when I got the job for the first time, u know ? I got
-              Java Programming and it was the first time again in to learn Java
-              guided by my best senior. And then I got "Rising Star Of the Year"
-              because my management suppose I cannot follow the bussiness flow
-              with Java because I dont have experience in Java, and in the 6
-              months, I got the "Rising Star" that exceeded management
-              expectations. <br />
-            </span>
-            <br />
-            <br />
-            <span className="font-bold dark:text-white">
-              I Love All About Technology!! 💓
-            </span>
-            <br />
-            <br />
-            <span className="underline text-sm dark:text-white">
-              For now, this is my programming language skill:
-            </span>
-            <br />
-            <div className="flex flex-row gap-4 mt-4">
-              {masteredProgramming.map((val, i) => {
-                return (
-                  <div key={`mastered_programming_${i}`}>
-                    <LottieAnimation
-                      animationData={val}
-                      width={"42px"}
-                      height={"42px"}
-                      play={true}
-                      speed={0.5}
-                    />
-                  </div>
-                );
-              })}
-            </div>
+          My first job? It was <strong>Java development</strong> — completely
+          new for me. But within 6 months, I achieved the{" "}
+          <strong>“Rising Star of the Year”</strong> award for exceeding
+          expectations. Since then, my journey has been about growth, curiosity,
+          and passion for learning.
+        </p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          viewport={{ once: true }}
+          className="mt-8"
+        >
+          <p className="font-bold text-lg mb-2">
+            I love all about technology 💻💡
+          </p>
+          <p className="text-sm mb-4 underline">
+            Here are the programming languages I’ve mastered:
+          </p>
+
+          {/* Language icons */}
+          <div className="flex flex-wrap gap-4">
+            {masteredProgramming.map((icon, i) => (
+              <motion.div
+                key={`lang-${i}`}
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2 * i,
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+                className="flex justify-center items-center w-[60px] h-[60px] rounded-xl bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 backdrop-blur-sm shadow-md hover:shadow-primary/30 transition-all"
+              >
+                <LottieAnimation
+                  animationData={icon}
+                  width={"42px"}
+                  height={"42px"}
+                  play={true}
+                  speed={0.8}
+                />
+              </motion.div>
+            ))}
           </div>
-        </ScrollAnimation>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
+
+export default AboutMePage;

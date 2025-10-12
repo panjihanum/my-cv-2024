@@ -1,7 +1,9 @@
 import { ICONS } from "../assets";
 import LottieAnimation from "../components/LottieAnimation";
 import { LottieButton } from "../components/LottieButton";
-import ScrollAnimation from "../components/ScrollAnimation";
+import { motion } from "framer-motion";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import { FaArrowDown } from "react-icons/fa";
 
 const myContacts = [
   {
@@ -22,78 +24,124 @@ const myContacts = [
     speed: 4,
   },
 ];
-export const HomePage = () => {
+
+const HomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen" id="homePage">
-      <div className="h-[72px]" />
-      <div className="flex flex-col lg:flex-row grow justify-between lg:p-24 items-center relative">
-        <ScrollAnimation
-          animationClass="animate__animated animate__backInLeft"
-          className="flex flex-col w-full lg:w-auto items-center lg:items-start text-center lg:text-left"
-        >
-          <span className="text-sm dark:text-white">Hi!, I'm 👋</span>
-          <span className="font-bold text-4xl dark:text-white">
-            Panji <span className="text-primary dark:text-primary">Hanum</span>
-          </span>
-          <span className="text-md font-semibold mt-1 dark:text-white">
-            A Software Engineer
-          </span>
-          <div className="flex flex-row gap-3 mt-4">
-            {myContacts.map((val, i) => {
-              return (
-                <LottieButton
-                  key={`mycontacts-${val.url}-${i}`}
-                  animationData={val.icon}
-                  size={40}
-                  handleClick={() => {
-                    window.open(val.url);
-                  }}
-                  speed={val.speed}
-                />
-              );
-            })}
-          </div>
-        </ScrollAnimation>
-        <ScrollAnimation
-          animationClass="animate__animated animate__zoomIn"
-          className="w-[75vw] h-[40vh] lg:w-auto lg:h-auto"
-        >
-          <LottieAnimation
-            animationData={ICONS.ANIMATION.ANIM_PERSON_DATA_SEARCH}
-            width={"100%"}
-            height={"100%"}
-            play
-          />
-        </ScrollAnimation>
-        <ScrollAnimation
-          animationClass="animate__animated animate__backInRight"
-          className="flex flex-col lg:max-w-[25%] text-center lg:text-start mb-24 px-4"
-        >
-          <span className="font-semibold dark:text-white">
-            Are u looking for software engineer ?
-          </span>
-          <span className="text-sm mt-2 dark:text-white">
-            Yes, That's Me !! <br />
-            You can review my portfolio, which aligns with your candidate
-            selection criteria. I would be delighted to learn new programming
-            languages, as I have a passion for learning, including exploring AI
-            engineering.
-            <br />
-          </span>
-          <div className="mt-4 flex lg:justify-start justify-center">
-            <a
-              href="/panji-hanum-cv.pdf"
-              download
-              className="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-b-2 font-medium border-primary text-primary text-white"
+    <ParallaxProvider>
+      <div
+        className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary"
+        id="homePage"
+      >
+        {/* Floating Glow Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute w-72 h-72 bg-primary/20 blur-3xl rounded-full top-10 left-10 animate-pulse"></div>
+          <div className="absolute w-64 h-64 bg-blue-500/10 blur-2xl rounded-full bottom-10 right-10 animate-ping"></div>
+        </div>
+
+        {/* Header Spacer */}
+        <div className="h-[72px]" />
+
+        <div className="flex flex-col lg:flex-row grow justify-between lg:p-24 items-center relative gap-10">
+          {/* Left Section - Intro */}
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
+            <span className="text-sm text-gray-500 dark:text-white">
+              Hi!, I'm 👋
+            </span>
+            <motion.span
+              className="font-bold text-5xl dark:text-white"
+              whileHover={{ scale: 1.03 }}
             >
-              <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-primary top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-              <span className="relative text-primary transition duration-300 group-hover:text-white ease">
-                Download CV
-              </span>
-            </a>
-          </div>
-        </ScrollAnimation>
+              Panji{" "}
+              <span className="text-primary dark:text-primary">Hanum</span>
+            </motion.span>
+            <span className="text-md font-semibold mt-1 dark:text-gray-200">
+              A Software Engineer
+            </span>
+
+            {/* Social Buttons */}
+            <div className="flex flex-row gap-3 mt-6">
+              {myContacts.map((val, i) => (
+                <motion.div
+                  key={`mycontacts-${val.url}-${i}`}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                >
+                  <LottieButton
+                    animationData={val.icon}
+                    size={44}
+                    handleClick={() => window.open(val.url)}
+                    speed={val.speed}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Center Section - Lottie Hero */}
+          <Parallax speed={10}>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative w-[75vw] h-[45vh] lg:w-[420px] lg:h-[420px]"
+            >
+              <LottieAnimation
+                animationData={ICONS.ANIMATION.ANIM_PERSON_DATA_SEARCH}
+                width={"100%"}
+                height={"100%"}
+                play
+              />
+              {/* Decorative glowing ring */}
+              <div className="absolute inset-0 rounded-full border-4 border-primary/20 blur-md animate-pulse"></div>
+            </motion.div>
+          </Parallax>
+
+          {/* Right Section - Text & CTA */}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex flex-col lg:max-w-[25%] text-center lg:text-start mb-24 px-4"
+          >
+            <span className="font-semibold dark:text-white text-lg">
+              Are you looking for a software engineer?
+            </span>
+            <span className="text-sm mt-2 dark:text-gray-300">
+              Yes, that’s me! 💻 <br />I love exploring new technologies — from
+              scalable backend systems to AI-driven engineering. Let’s build
+              something great together.
+            </span>
+
+            <div className="w-full h-full d-flex flex-row items-center">
+              {/* CTA Button */}
+              <motion.a
+                href="/panji-hanum-cv.pdf"
+                download
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 20px rgba(20,115,230,0.5)",
+                }}
+                className="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium transition duration-300 ease-out border-2 border-primary rounded-xl group"
+              >
+                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
+                  <FaArrowDown className="text-lg" />
+                </span>
+                <span className="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">
+                  Download CV
+                </span>
+                <span className="relative invisible">Download CV</span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </ParallaxProvider>
   );
 };
+
+export default HomePage;
