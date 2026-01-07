@@ -17,9 +17,9 @@ export const DarkLightButton = () => {
   return (
     <motion.button
       onClick={() => toggleTheme()}
-      className="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 dark:bg-white/10 text-primary dark:text-yellow-300 backdrop-blur-md hover:scale-110 transition-all"
-      whileTap={{ scale: 0.9, rotate: 15 }}
-      whileHover={{ rotate: -10 }}
+      className="neo-button relative flex items-center justify-center w-10 h-10 rounded-full text-primary dark:text-yellow-300"
+      whileTap={{ scale: 0.95, rotate: 8 }}
+      whileHover={{ rotate: -6 }}
     >
       {useDarkTheme ? (
         <motion.div

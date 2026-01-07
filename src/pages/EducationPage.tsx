@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaBook, FaLaptopCode } from "react-icons/fa";
 import { SiUdemy } from "react-icons/si";
@@ -36,7 +35,7 @@ export const EducationPage = () => {
   return (
     <section
       id="educationPage"
-      className="w-full bg-gradient-to-b from-slate-50 to-white dark:from-dark dark:to-darkSecondary py-20 lg:px-24 text-center overflow-hidden"
+      className="w-full bg-[var(--neo-bg)] py-20 lg:px-24 text-center overflow-hidden"
     >
       <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-[240px] bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
 
@@ -61,12 +60,12 @@ export const EducationPage = () => {
           <motion.div
             key={`edu_${i}`}
             variants={cardVariants as any}
-            className={`relative flex flex-col lg:flex-row items-start gap-6 bg-white/80 dark:bg-darkSecondary/70 backdrop-blur-md border border-primary/10 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-500 p-6 lg:p-8 ${
+            className={`relative flex flex-col lg:flex-row items-start gap-6 neo-surface transition-all duration-500 p-6 lg:p-8 ${
               i % 2 === 0 ? "lg:translate-x-6" : "lg:-translate-x-6"
             }`}
           >
             {/* Icon */}
-            <div className="flex items-center justify-center bg-primary/10 dark:bg-primary/20 text-primary rounded-full w-14 h-14 shadow-inner flex-shrink-0">
+            <div className="neo-button flex items-center justify-center text-primary rounded-full w-14 h-14 flex-shrink-0">
               {edu.icon}
             </div>
 

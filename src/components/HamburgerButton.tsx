@@ -29,6 +29,7 @@ export const HamburgerButton = ({
         if (!isPaused) return;
         handleToggle();
       }}
+      className="neo-button rounded-full p-2"
     >
       <LottieAnimation
         animationData={

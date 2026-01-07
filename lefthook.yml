@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: eslint src --ext ts,tsx --max-warnings 0
+    typecheck:
+      run: npm run typecheck
+    tests:
+      run: npm run test:run
+
+pre-push:
+  commands:
+    tests:
+      run: npm run test:coverage

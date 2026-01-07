@@ -39,9 +39,7 @@ export const Header: React.FC = () => {
   return (
     <motion.header
       className={`fixed w-screen top-0 z-[20] transition-all duration-500 ${
-        isScrolled
-          ? "backdrop-blur-md bg-white/70 dark:bg-darkSecondary/60 shadow-md"
-          : "bg-transparent"
+        isScrolled ? "neo-bar" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -68,16 +66,10 @@ export const Header: React.FC = () => {
                 <motion.button
                   key={`nav-${i}`}
                   onClick={() => navigate(val.id)}
-                  className="text-sm font-medium dark:text-white text-gray-800 relative group tracking-wide"
-                  whileHover={{ scale: 1.1 }}
+                  className="neo-button px-3 py-2 text-sm font-medium dark:text-white text-gray-800 relative tracking-wide"
+                  whileHover={{ scale: 1.05 }}
                 >
                   {val.label}
-                  <motion.span
-                    className="absolute left-0 bottom-0 h-[2px] bg-primary rounded-full"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </motion.button>
               ))}
             </nav>
@@ -85,8 +77,8 @@ export const Header: React.FC = () => {
             <>
               <motion.button
                 onClick={() => setIsMenuActive(!isMenuActive)}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 text-primary dark:text-white"
+                whileTap={{ scale: 0.95 }}
+                className="neo-button rounded-full p-2 text-primary dark:text-white"
               >
                 {isMenuActive ? <HiX size={28} /> : <HiOutlineMenu size={28} />}
               </motion.button>
@@ -98,13 +90,13 @@ export const Header: React.FC = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="absolute top-[72px] left-0 w-full bg-white/90 dark:bg-darkSecondary backdrop-blur-md shadow-md border-b border-primary/20 flex flex-col items-center z-[19]"
+                    className="absolute top-[72px] left-0 w-full neo-surface backdrop-blur-md border-b border-primary/20 flex flex-col items-center z-[19] rounded-none"
                   >
                     {headerNav.map((val, i) => (
                       <button
                         key={`menu-${i}`}
                         onClick={() => navigate(val.id)}
-                        className="py-3 w-full text-sm dark:text-white hover:bg-primary/10 transition-all"
+                        className="py-3 w-full text-sm dark:text-white transition-all hover:opacity-80"
                       >
                         {val.label}
                       </button>

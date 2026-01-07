@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import { FaBriefcase, FaLaptopCode, FaServer, FaCogs } from "react-icons/fa";
 import {
@@ -82,7 +81,7 @@ export const ExperiencePage = () => {
   return (
     <section
       id="experiencePage"
-      className="w-full min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-dark dark:to-darkSecondary py-20 lg:px-24 text-center overflow-hidden relative"
+      className="w-full min-h-screen bg-[var(--neo-bg)] py-20 lg:px-24 text-center overflow-hidden relative"
     >
       <div className="absolute left-1/2  transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
 
@@ -107,12 +106,12 @@ export const ExperiencePage = () => {
           <motion.div
             key={`exp_${i}`}
             variants={itemVariants as any}
-            className={`relative flex flex-col lg:flex-row gap-6 items-start bg-white/80 dark:bg-darkSecondary/70 backdrop-blur-md border border-primary/10 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-500 p-6 lg:p-8 ${
+            className={`relative flex flex-col lg:flex-row gap-6 items-start neo-surface transition-all duration-500 p-6 lg:p-8 ${
               i % 2 === 0 ? "lg:translate-x-6" : "lg:-translate-x-6"
             }`}
           >
             {/* Left Icon */}
-            <div className="flex flex-col items-center justify-center bg-primary/10 text-primary dark:bg-primary/20 rounded-full w-14 h-14 flex-shrink-0 shadow-inner">
+            <div className="neo-button flex flex-col items-center justify-center text-primary rounded-full w-14 h-14 flex-shrink-0">
               <FaBriefcase size={24} />
             </div>
 

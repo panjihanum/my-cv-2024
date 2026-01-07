@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
@@ -152,7 +151,7 @@ const PortfolioPage = () => {
   return (
     <section
       id="portfolioPage"
-      className="w-full min-h-screen bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary py-20 lg:px-24 text-center overflow-hidden"
+      className="w-full min-h-screen bg-[var(--neo-bg)] py-20 lg:px-24 text-center overflow-hidden"
     >
       {/* Header */}
       <motion.h2
@@ -177,11 +176,9 @@ const PortfolioPage = () => {
           <motion.button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-5 py-2.5 rounded-full border text-sm font-medium transition-all duration-300 ${
-              selectedCategory === cat
-                ? "bg-primary text-white border-primary shadow-lg"
-                : "bg-white text-gray-800 border-gray-300 dark:bg-darkSecondary dark:text-white hover:bg-primary/10"
-            }`}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                selectedCategory === cat ? "neo-pressed" : "neo-button"
+              }`}
             whileHover={{ scale: 1.07 }}
           >
             {cat}
@@ -203,11 +200,11 @@ const PortfolioPage = () => {
             variants={cardVariants as any}
             whileHover={{
               y: -8,
-              boxShadow: "0 8px 24px rgba(20,115,230,0.25)",
+                boxShadow: "10px 10px 20px var(--neo-shadow-dark), -10px -10px 20px var(--neo-shadow-light)",
             }}
             transition={{ type: "spring", stiffness: 120 }}
             onClick={() => setActiveProject(project)}
-            className="cursor-pointer group bg-white dark:bg-darkSecondary rounded-3xl shadow-lg overflow-hidden hover:shadow-primary/30 transition-all duration-300 w-full max-w-[400px]"
+              className="cursor-pointer group neo-surface rounded-3xl overflow-hidden transition-all duration-300 w-full max-w-[400px]"
           >
             <ProjectCarousel images={project.images} />
             <div className="p-5 text-left">
@@ -284,7 +281,7 @@ const ProjectModal = ({
       onClick={onClose}
     >
       <motion.div
-        className="bg-white dark:bg-darkSecondary rounded-2xl shadow-xl max-w-4xl w-full overflow-hidden relative"
+         className="neo-elevated rounded-2xl max-w-4xl w-full overflow-hidden relative"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
@@ -330,7 +327,7 @@ const ProjectModal = ({
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition"
+                className="neo-button px-5 py-2.5 rounded-full text-primary dark:text-white font-medium transition"
               >
                 View Project
               </a>

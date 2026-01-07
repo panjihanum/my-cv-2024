@@ -29,7 +29,7 @@ const HomePage = () => {
   return (
     <ParallaxProvider>
       <div
-        className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary"
+        className="relative flex flex-col min-h-screen overflow-hidden bg-[var(--neo-bg)]"
         id="homePage"
       >
         {/* Floating Glow Background */}
@@ -68,15 +68,17 @@ const HomePage = () => {
               {myContacts.map((val, i) => (
                 <motion.div
                   key={`mycontacts-${val.url}-${i}`}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileHover={{ scale: 1.15, rotate: 4 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >
-                  <LottieButton
+                  <div className="neo-button rounded-full p-2">
+                    <LottieButton
                     animationData={val.icon}
                     size={44}
                     handleClick={() => window.open(val.url)}
                     speed={val.speed}
-                  />
+                    />
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -122,19 +124,11 @@ const HomePage = () => {
               <motion.a
                 href="/panji-hanum-cv.pdf"
                 download
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 20px rgba(20,115,230,0.5)",
-                }}
-                className="mt-6 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium transition duration-300 ease-out border-2 border-primary rounded-xl group"
+                whileHover={{ scale: 1.05 }}
+                className="neo-button mt-6 inline-flex items-center justify-center px-4 py-2 rounded-xl text-primary dark:text-white gap-2"
               >
-                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
-                  <FaArrowDown className="text-lg" />
-                </span>
-                <span className="absolute flex items-center justify-center w-full h-full text-primary transition-all duration-300 transform group-hover:translate-x-full ease">
-                  Download CV
-                </span>
-                <span className="relative invisible">Download CV</span>
+                <FaArrowDown className="text-lg" />
+                <span>Download CV</span>
               </motion.a>
             </div>
           </motion.div>

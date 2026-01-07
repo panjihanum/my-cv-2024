@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import { FaReact, FaJava, FaLaravel, FaDocker, FaPython } from "react-icons/fa";
 import {
@@ -158,7 +157,7 @@ const SkillsPage = () => {
   return (
     <section
       id="skillsPage"
-      className="relative w-full min-h-screen bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary py-20 lg:px-24 text-center overflow-hidden"
+      className="relative w-full min-h-screen bg-[var(--neo-bg)] py-20 lg:px-24 text-center overflow-hidden"
     >
       {/* glowing background */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/20 blur-3xl rounded-full -z-10 animate-pulse"></div>
@@ -189,10 +188,11 @@ const SkillsPage = () => {
               scale: 1.04,
               rotateX: 2,
               rotateY: -2,
-              boxShadow: "0 0 24px rgba(20,115,230,0.35)",
+              boxShadow:
+                "10px 10px 20px var(--neo-shadow-dark), -10px -10px 20px var(--neo-shadow-light)",
             }}
             transition={{ type: "tween" }}
-            className="w-full max-w-[360px] bg-white/80 dark:bg-darkSecondary/70 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-primary/10 hover:border-primary/40 transition-all duration-300"
+            className="w-full max-w-[360px] neo-surface p-6 transition-all duration-300"
           >
             <h3 className="text-lg font-semibold text-primary mb-5">
               {group.category}
@@ -201,8 +201,8 @@ const SkillsPage = () => {
               {group.items.map((skill, j) => (
                 <motion.div
                   key={`skill-${i}-${j}`}
-                  whileHover={{ scale: 1.12, rotate: 3 }}
-                  className="flex flex-col items-center justify-center p-3 bg-white/60 dark:bg-dark/40 rounded-xl shadow-md hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300"
+                  whileHover={{ scale: 1.08, rotate: 2 }}
+                  className="neo-button flex flex-col items-center justify-center p-3 rounded-xl transition-all duration-300"
                 >
                   {skill.icon}
                   <p className="text-xs mt-2 dark:text-gray-200">

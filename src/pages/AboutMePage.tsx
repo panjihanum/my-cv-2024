@@ -13,7 +13,7 @@ const AboutMePage = () => {
   return (
     <section
       id="aboutMePage"
-      className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-between overflow-hidden bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary"
+      className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-between overflow-hidden bg-[var(--neo-bg)]"
     >
       {/* Glow Effects */}
       <div className="absolute w-96 h-96 bg-primary/10 blur-3xl rounded-full top-10 left-10 animate-pulse -z-10"></div>
@@ -30,7 +30,7 @@ const AboutMePage = () => {
         <motion.img
           src={IMAGES.PANJI_TRANS}
           alt="Panji Hanum"
-          className="w-[70%] max-w-[520px] rounded-2xl shadow-2xl dark:shadow-primary/20 hover:scale-105 transition-transform duration-700"
+          className="w-[70%] max-w-[520px] rounded-2xl neo-elevated hover:scale-105 transition-transform duration-700"
           whileHover={{ scale: 1.05, rotate: 1 }}
         />
       </motion.div>
@@ -94,7 +94,7 @@ const AboutMePage = () => {
                   duration: 0.6,
                   ease: "easeOut",
                 }}
-                className="flex justify-center items-center w-[60px] h-[60px] rounded-xl bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 backdrop-blur-sm shadow-md hover:shadow-primary/30 transition-all"
+                className="neo-button flex justify-center items-center w-[60px] h-[60px] rounded-xl transition-all"
               >
                 <LottieAnimation
                   animationData={icon}

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -80,7 +79,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
   return (
     <section
       id="contactPage"
-      className="relative w-full min-h-screen bg-gradient-to-b from-white to-slate-100 dark:from-dark dark:to-darkSecondary py-20 px-6 lg:px-24 overflow-hidden"
+      className="relative w-full min-h-screen bg-[var(--neo-bg)] py-20 px-6 lg:px-24 overflow-hidden"
     >
       {/* Header */}
       <motion.h2
@@ -146,7 +145,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
         {/* Right: Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white/80 dark:bg-darkSecondary/70 backdrop-blur-lg border border-primary/10 shadow-lg rounded-2xl p-8 space-y-5 w-full"
+          className="neo-surface rounded-2xl p-8 space-y-5 w-full"
           variants={fadeUp as any}
           initial="hidden"
           whileInView="show"
@@ -163,7 +162,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
               onChange={handleChange}
               required
               placeholder="Your name"
-              className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-dark border border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+              className="neo-input px-4 py-2 outline-none transition-all"
             />
           </div>
 
@@ -178,7 +177,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
               onChange={handleChange}
               required
               placeholder="your@email.com"
-              className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-dark border border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+              className="neo-input px-4 py-2 outline-none transition-all"
             />
           </div>
 
@@ -193,7 +192,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
               required
               placeholder="Write your message here..."
               rows={4}
-              className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-dark border border-gray-300 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+              className="neo-input px-4 py-2 outline-none transition-all resize-none"
             />
           </div>
 
@@ -201,7 +200,7 @@ Message: ${encodeURIComponent(form.message)}%0A`;
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full py-2.5 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-all"
+            className="neo-button w-full py-2.5 rounded-full text-primary dark:text-white font-semibold transition-all"
           >
             {sent ? "✅ Message Sent!" : "Send Message"}
           </motion.button>
