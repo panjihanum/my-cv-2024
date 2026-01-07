@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: eslint src --ext ts,tsx --max-warnings 0
+      run: npx eslint src --ext ts,tsx --max-warnings 0
     typecheck:
       run: npm run typecheck
     tests:
