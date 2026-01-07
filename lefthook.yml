@@ -7,8 +7,3 @@ pre-commit:
       run: npm run typecheck
     tests:
       run: npm run test:run
-
-pre-push:
-  commands:
-    tests:
-      run: npm run test:coverage
