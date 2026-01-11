@@ -176,7 +176,7 @@ const PortfolioPage = () => {
           <motion.button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`dark:text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === cat ? "neo-pressed" : "neo-button"
               }`}
             whileHover={{ scale: 1.07 }}

@@ -11,11 +11,11 @@ import {
 export const ExperiencePage = () => {
   const experiences = [
     {
-      company: "TAAT (Tech Automation & Analytics Tool)",
-      role: "Fullstack Engineer (Freelance)",
+      company: "TAAT",
+      role: "Full-stack Developer (Freelance – Remote)",
       duration: "Sep 2024 — Present",
       description:
-        "Developed and maintained TAAT web platform using NestJS microservices and Next.js. Integrated WhatsApp automation, Kommo/Brevo CRM, and SEO pipeline. Implemented Dockerized deployment on Ubuntu Server.",
+        "Developed NestJS–Next.js microservices from scratch with Redis caching and queue systems. Integrated WhatsApp messaging, Python scraping, and sales tools (Kommo, Brevo). Deployed Dockerized services on Ubuntu Server and improved performance by 50%. Optimized SEO and system architecture for low latency and scalability.",
       tech: [
         <SiNestjs key="nestjs" />,
         <SiReact key="react" />,
@@ -23,11 +23,35 @@ export const ExperiencePage = () => {
       ],
     },
     {
-      company: "Akal Karya Indonesia",
-      role: "Fullstack Developer (Freelance)",
+      company: "Prodia",
+      role: "Full-stack Developer (Fulltime – Hybrid)",
+      duration: "Oct 2025 — Dec 2025",
+      description:
+        "Developed scalable Java Spring Boot microservices with MongoDB. Designed and maintained RESTful APIs for production systems. Ensured code quality through unit testing and best practices. Monitored and optimized system performance via AWS CloudWatch. Collaborated in Agile teams (JIRA) and system design sessions.",
+      tech: [
+        <SiSpringboot key="spring-prodia" />,
+        <FaServer key="server-prodia" />,
+        <FaCogs key="ci-prodia" />,
+      ],
+    },
+    {
+      company: "PT. MSIG Life",
+      role: "Full-stack Developer (Fulltime – Remote)",
+      duration: "May 2024 — May 2025",
+      description:
+        "Developed scalable backend microservices using Java Spring Boot and enhanced frontend performance with Nuxt.js. Optimized database queries using Toad (Oracle Database) to improve system efficiency. Integrated REST APIs between Java Spring API and Nuxt.js for seamless communication. Deployed and automated CI/CD pipelines with Jenkins, reducing deployment time.",
+      tech: [
+        <SiSpringboot key="spring" />,
+        <FaServer key="server" />,
+        <FaCogs key="ci" />,
+      ],
+    },
+    {
+      company: "PT. Akal Karya Indonesia",
+      role: "Full-stack Developer (Freelance – Remote)",
       duration: "Dec 2022 — Aug 2025",
       description:
-        "Contributed to multiple client projects using NestJS, Next.js, and Laravel. Implemented scalable APIs, SEO-optimized landing pages, and automation pipelines for property sites.",
+        "Developed reusable backend and frontend components using Laravel, NestJS, Next.js, and React. Collaborated with UI/UX designers to deliver optimal user experiences. Deployed and managed applications on CentOS servers using Docker.",
       tech: [
         <SiNestjs key="nest2" />,
         <FaLaptopCode key="code" />,
@@ -35,24 +59,23 @@ export const ExperiencePage = () => {
       ],
     },
     {
-      company: "MSIG Life Indonesia",
-      role: "Java Developer (Full-time)",
-      duration: "May 2024 — May 2025",
+      company: "Gaji Cermat",
+      role: "Front-end Developer (Freelance – Remote)",
+      duration: "Dec 2022 — Oct 2023",
       description:
-        "Built and optimized insurance underwriting system (Nebula) using Java Spring Boot, Quarkus, and Vue/Nuxt.js. Integrated RESTful APIs, Oracle DB, and CI/CD via Jenkins. Improved performance and maintainability.",
+        "Developed reusable and maintainable code using React (Web) and React Native (Mobile). Built and integrated RESTful APIs for web and mobile applications. Collaborated with UI/UX and mobile teams on internal finance-related projects.",
       tech: [
-        <SiSpringboot key="spring" />,
-        <FaServer key="server" />,
-        <FaCogs key="ci" />,
+        <SiReact key="react-gaji" />,
+        <FaLaptopCode key="code-gaji" />,
+        <FaServer key="api-gaji" />,
       ],
     },
-
     {
-      company: "ALAMI Sharia",
-      role: "Fullstack Developer)",
+      company: "PT. BPRS Hijra",
+      role: "Software Engineer (Fulltime – Remote)",
       duration: "Jun 2019 — Sep 2023",
       description:
-        "Developed P2P financing app using React Native and Redux. Integrated backend services built on Hibernate and Spring Boot for scalable financial operations.",
+        "Developed backend microservices using Java Spring Boot and Quarkus with Hibernate ORM. Built mobile applications using React Native integrated with Spring-based APIs. Applied clean code principles and best practices to improve application performance. Deployed and managed microservices using Jenkins CI/CD pipelines. Implemented Kafka for asynchronous mail services to improve scalability and low latency.",
       tech: [
         <SiReact key="rn" />,
         <SiSpringboot key="spring2" />,
